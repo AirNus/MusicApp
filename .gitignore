@@ -1,0 +1,5 @@
+/*.vs
+/*.sln
+/Music_App/*
+!/Music_App/*.cs
+/Music_App/*DataSet*.cs
