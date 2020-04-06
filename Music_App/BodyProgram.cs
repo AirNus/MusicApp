@@ -14,6 +14,7 @@ namespace Music_App
     {              
         string answer;
         string MyQuery;
+        string SongName = "";
         Auth auth;       
         List<Songs> MusicName = new List<Songs>();        
         string role,login,password;      
@@ -54,9 +55,7 @@ namespace Music_App
         {
             try
             {
-                //C:\Users\Айнур\Documents\GitHub\Music_App\Music_App\bin\x64\Debug\Music\Alboms\Eminem\Revival
-                //C:\Users\Айнур\Documents\GitHub\Music_App\Music_App\bin\x64\Debug\Music\Alboms\Eminem\Revival
-                //"Walk On Water (feat. Beyonce)"
+                SongName = MusicName[MusicListBox.SelectedIndex].Name;
                 axMusic.URL = $"{MusicName[MusicListBox.SelectedIndex].Song_path}\\{MusicName[MusicListBox.SelectedIndex].Name}.mp3";               
                 answer = StoredProcedureEXEC.ExecuteProcedureWithoutput("CheckStatusSong", login, MusicName[MusicListBox.SelectedIndex].Name);
             }
@@ -169,22 +168,25 @@ namespace Music_App
 
         private void I_LikeIconPlayer_Click(object sender, EventArgs e)
         {
-            MyQuery = $"EXEC [MusicChooseNotLike] '{login}', '{MusicName[MusicListBox.SelectedIndex].Name}'";
+            MyQuery = $"EXEC [MusicChooseNotLike] '{login}', '{SongName}'";
             StoredProcedureEXEC.ExecuteProcedure(MyQuery, "", null);
             I_LikeIconPlayer.Visible = false;
             I_NoLikeIconPlayer.Visible = true;           
         }
 
         private void I_NoLikeIconPlayer_Click(object sender, EventArgs e)
-        {
-             answer = StoredProcedureEXEC.ExecuteProcedureWithoutput("MusicChooseLike",login, MusicName[MusicListBox.SelectedIndex].Name);
+        {           
+             answer = StoredProcedureEXEC.ExecuteProcedureWithoutput("MusicChooseLike",login, SongName);
             if (answer == "Err" || answer == "NO")
-                return;         
-            else if( answer == "YES")
-            {             
+            {
+                MessageBox.Show("Произошла ошибка","Ошибка!");
+                return;
+            }
+            else if (answer == "YES")
+            {
                 I_LikeIconPlayer.Visible = true;
                 I_NoLikeIconPlayer.Visible = false;
-            }
+            }            
         }
 
         /// Вкладка Альбом
@@ -341,7 +343,7 @@ namespace Music_App
             this.Hide();
             auth.Show();
         }
-
+     
 
         private void btnUpdate_pass_Click(object sender, EventArgs e)
         {

@@ -42,8 +42,7 @@
             this.I_LikePictureBox = new System.Windows.Forms.PictureBox();
             this.UserPage = new System.Windows.Forms.TabPage();
             this.lblExitAccount = new System.Windows.Forms.Label();
-            this.btnAddTrack_Moderator = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelChangePass = new System.Windows.Forms.Label();
             this.btnUpdate_pass = new System.Windows.Forms.Button();
             this.btnUpdate_user = new System.Windows.Forms.Button();
             this.UserStatus = new System.Windows.Forms.Label();
@@ -52,12 +51,13 @@
             this.new_passTextBox = new System.Windows.Forms.TextBox();
             this.old_passTextBox = new System.Windows.Forms.TextBox();
             this.name_userTextBox = new System.Windows.Forms.TextBox();
-            this.music_poDataSet = new Music_App.Music_poDataSet();
+            this.btnAddTrack_Moderator = new System.Windows.Forms.Button();
             this.Search_TextBox = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.I_NoLikeIconPlayer = new System.Windows.Forms.PictureBox();
             this.I_LikeIconPlayer = new System.Windows.Forms.PictureBox();
             this.timerMusicPlayer = new System.Windows.Forms.Timer(this.components);
+            this.labelChangeLogin = new System.Windows.Forms.Label();
             name_userLabel = new System.Windows.Forms.Label();
             this.TopPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axMusic)).BeginInit();
@@ -65,7 +65,6 @@
             this.Collections.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.I_LikePictureBox)).BeginInit();
             this.UserPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.music_poDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.I_NoLikeIconPlayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.I_LikeIconPlayer)).BeginInit();
             this.SuspendLayout();
@@ -73,10 +72,10 @@
             // name_userLabel
             // 
             name_userLabel.AutoSize = true;
-            name_userLabel.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            name_userLabel.Location = new System.Drawing.Point(253, 71);
+            name_userLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            name_userLabel.Location = new System.Drawing.Point(34, 196);
             name_userLabel.Name = "name_userLabel";
-            name_userLabel.Size = new System.Drawing.Size(58, 15);
+            name_userLabel.Size = new System.Drawing.Size(71, 19);
             name_userLabel.TabIndex = 2;
             name_userLabel.Text = "Никнейм";
             // 
@@ -128,10 +127,12 @@
             // 
             // MusicListBox
             // 
+            this.MusicListBox.Font = new System.Drawing.Font("Modern No. 20", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MusicListBox.FormattingEnabled = true;
+            this.MusicListBox.ItemHeight = 15;
             this.MusicListBox.Location = new System.Drawing.Point(375, 64);
             this.MusicListBox.Name = "MusicListBox";
-            this.MusicListBox.Size = new System.Drawing.Size(191, 264);
+            this.MusicListBox.Size = new System.Drawing.Size(191, 259);
             this.MusicListBox.TabIndex = 0;
             this.MusicListBox.SelectedIndexChanged += new System.EventHandler(this.MusicListBox_SelectedIndexChanged);
             // 
@@ -140,6 +141,7 @@
             this.Main.Controls.Add(this.Albom);
             this.Main.Controls.Add(this.Collections);
             this.Main.Controls.Add(this.UserPage);
+            this.Main.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Main.Location = new System.Drawing.Point(12, 64);
             this.Main.Name = "Main";
             this.Main.SelectedIndex = 0;
@@ -149,10 +151,10 @@
             // Albom
             // 
             this.Albom.AutoScroll = true;
-            this.Albom.Location = new System.Drawing.Point(4, 22);
+            this.Albom.Location = new System.Drawing.Point(4, 24);
             this.Albom.Name = "Albom";
             this.Albom.Padding = new System.Windows.Forms.Padding(3);
-            this.Albom.Size = new System.Drawing.Size(349, 279);
+            this.Albom.Size = new System.Drawing.Size(349, 277);
             this.Albom.TabIndex = 0;
             this.Albom.Text = "Альбомы";
             this.Albom.UseVisualStyleBackColor = true;
@@ -160,10 +162,10 @@
             // Collections
             // 
             this.Collections.Controls.Add(this.I_LikePictureBox);
-            this.Collections.Location = new System.Drawing.Point(4, 22);
+            this.Collections.Location = new System.Drawing.Point(4, 24);
             this.Collections.Name = "Collections";
             this.Collections.Padding = new System.Windows.Forms.Padding(3);
-            this.Collections.Size = new System.Drawing.Size(349, 279);
+            this.Collections.Size = new System.Drawing.Size(349, 277);
             this.Collections.TabIndex = 1;
             this.Collections.Text = "Подборки и жанры";
             this.Collections.UseVisualStyleBackColor = true;
@@ -183,8 +185,8 @@
             // 
             this.UserPage.AutoScroll = true;
             this.UserPage.Controls.Add(this.lblExitAccount);
-            this.UserPage.Controls.Add(this.btnAddTrack_Moderator);
-            this.UserPage.Controls.Add(this.label1);
+            this.UserPage.Controls.Add(this.labelChangeLogin);
+            this.UserPage.Controls.Add(this.labelChangePass);
             this.UserPage.Controls.Add(this.btnUpdate_pass);
             this.UserPage.Controls.Add(this.btnUpdate_user);
             this.UserPage.Controls.Add(this.UserStatus);
@@ -195,10 +197,10 @@
             this.UserPage.Controls.Add(name_userLabel);
             this.UserPage.Controls.Add(this.name_userTextBox);
             this.UserPage.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserPage.Location = new System.Drawing.Point(4, 22);
+            this.UserPage.Location = new System.Drawing.Point(4, 24);
             this.UserPage.Name = "UserPage";
             this.UserPage.Padding = new System.Windows.Forms.Padding(3);
-            this.UserPage.Size = new System.Drawing.Size(349, 279);
+            this.UserPage.Size = new System.Drawing.Size(349, 277);
             this.UserPage.TabIndex = 2;
             this.UserPage.Text = "Пользователь";
             this.UserPage.UseVisualStyleBackColor = true;
@@ -207,41 +209,31 @@
             // 
             this.lblExitAccount.AutoSize = true;
             this.lblExitAccount.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblExitAccount.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblExitAccount.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblExitAccount.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.lblExitAccount.Location = new System.Drawing.Point(305, 31);
+            this.lblExitAccount.Location = new System.Drawing.Point(288, 7);
             this.lblExitAccount.Name = "lblExitAccount";
-            this.lblExitAccount.Size = new System.Drawing.Size(38, 14);
+            this.lblExitAccount.Size = new System.Drawing.Size(55, 19);
             this.lblExitAccount.TabIndex = 10;
             this.lblExitAccount.Text = "Выйти";
             this.lblExitAccount.Click += new System.EventHandler(this.lblExitAccount_Click);
             // 
-            // btnAddTrack_Moderator
+            // labelChangePass
             // 
-            this.btnAddTrack_Moderator.Location = new System.Drawing.Point(233, 242);
-            this.btnAddTrack_Moderator.Name = "btnAddTrack_Moderator";
-            this.btnAddTrack_Moderator.Size = new System.Drawing.Size(98, 23);
-            this.btnAddTrack_Moderator.TabIndex = 9;
-            this.btnAddTrack_Moderator.Text = "Добавить трек";
-            this.btnAddTrack_Moderator.UseVisualStyleBackColor = true;
-            this.btnAddTrack_Moderator.Visible = false;
-            this.btnAddTrack_Moderator.Click += new System.EventHandler(this.btnAddTrack_Moderator_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(43, 61);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 19);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Смена пароля";
+            this.labelChangePass.AutoSize = true;
+            this.labelChangePass.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelChangePass.Location = new System.Drawing.Point(24, 62);
+            this.labelChangePass.Name = "labelChangePass";
+            this.labelChangePass.Size = new System.Drawing.Size(104, 19);
+            this.labelChangePass.TabIndex = 8;
+            this.labelChangePass.Text = "Смена пароля";
             // 
             // btnUpdate_pass
             // 
-            this.btnUpdate_pass.Location = new System.Drawing.Point(58, 154);
+            this.btnUpdate_pass.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnUpdate_pass.Location = new System.Drawing.Point(243, 106);
             this.btnUpdate_pass.Name = "btnUpdate_pass";
-            this.btnUpdate_pass.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate_pass.Size = new System.Drawing.Size(100, 27);
             this.btnUpdate_pass.TabIndex = 7;
             this.btnUpdate_pass.Text = "Сохранить";
             this.btnUpdate_pass.UseVisualStyleBackColor = true;
@@ -249,9 +241,10 @@
             // 
             // btnUpdate_user
             // 
-            this.btnUpdate_user.Location = new System.Drawing.Point(246, 122);
+            this.btnUpdate_user.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnUpdate_user.Location = new System.Drawing.Point(243, 192);
             this.btnUpdate_user.Name = "btnUpdate_user";
-            this.btnUpdate_user.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate_user.Size = new System.Drawing.Size(100, 27);
             this.btnUpdate_user.TabIndex = 7;
             this.btnUpdate_user.Text = "Сохранить";
             this.btnUpdate_user.UseVisualStyleBackColor = true;
@@ -260,61 +253,67 @@
             // UserStatus
             // 
             this.UserStatus.AutoSize = true;
-            this.UserStatus.Font = new System.Drawing.Font("Mistral", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.UserStatus.Location = new System.Drawing.Point(250, 5);
+            this.UserStatus.Font = new System.Drawing.Font("Mistral", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.UserStatus.Location = new System.Drawing.Point(13, 15);
             this.UserStatus.Name = "UserStatus";
-            this.UserStatus.Size = new System.Drawing.Size(93, 26);
+            this.UserStatus.Size = new System.Drawing.Size(119, 33);
             this.UserStatus.TabIndex = 6;
             this.UserStatus.Text = "Слушатель";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(5, 129);
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(3, 127);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 15);
+            this.label2.Size = new System.Drawing.Size(107, 19);
             this.label2.TabIndex = 5;
             this.label2.Text = "Новый пароль";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(1, 92);
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(3, 90);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 15);
+            this.label3.Size = new System.Drawing.Size(113, 19);
             this.label3.TabIndex = 5;
             this.label3.Text = "Старый пароль";
             // 
             // new_passTextBox
             // 
-            this.new_passTextBox.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.new_passTextBox.Location = new System.Drawing.Point(93, 126);
+            this.new_passTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.new_passTextBox.Location = new System.Drawing.Point(122, 124);
             this.new_passTextBox.Name = "new_passTextBox";
-            this.new_passTextBox.Size = new System.Drawing.Size(100, 22);
+            this.new_passTextBox.Size = new System.Drawing.Size(100, 26);
             this.new_passTextBox.TabIndex = 4;
             // 
             // old_passTextBox
             // 
-            this.old_passTextBox.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.old_passTextBox.Location = new System.Drawing.Point(93, 89);
+            this.old_passTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.old_passTextBox.Location = new System.Drawing.Point(122, 87);
             this.old_passTextBox.Name = "old_passTextBox";
-            this.old_passTextBox.Size = new System.Drawing.Size(100, 22);
+            this.old_passTextBox.Size = new System.Drawing.Size(100, 26);
             this.old_passTextBox.TabIndex = 4;
             // 
             // name_userTextBox
             // 
-            this.name_userTextBox.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.name_userTextBox.Location = new System.Drawing.Point(233, 89);
+            this.name_userTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.name_userTextBox.Location = new System.Drawing.Point(122, 193);
             this.name_userTextBox.Name = "name_userTextBox";
-            this.name_userTextBox.Size = new System.Drawing.Size(100, 22);
+            this.name_userTextBox.Size = new System.Drawing.Size(100, 26);
             this.name_userTextBox.TabIndex = 3;
             // 
-            // music_poDataSet
+            // btnAddTrack_Moderator
             // 
-            this.music_poDataSet.DataSetName = "Music_poDataSet";
-            this.music_poDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.btnAddTrack_Moderator.Location = new System.Drawing.Point(375, 329);
+            this.btnAddTrack_Moderator.Name = "btnAddTrack_Moderator";
+            this.btnAddTrack_Moderator.Size = new System.Drawing.Size(179, 36);
+            this.btnAddTrack_Moderator.TabIndex = 9;
+            this.btnAddTrack_Moderator.Text = "Добавить трек";
+            this.btnAddTrack_Moderator.UseVisualStyleBackColor = true;
+            this.btnAddTrack_Moderator.Visible = false;
+            this.btnAddTrack_Moderator.Click += new System.EventHandler(this.btnAddTrack_Moderator_Click);
             // 
             // Search_TextBox
             // 
@@ -328,6 +327,7 @@
             // 
             this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnSearch.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnSearch.Location = new System.Drawing.Point(457, 37);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 20);
@@ -367,6 +367,16 @@
             // 
             this.timerMusicPlayer.Tick += new System.EventHandler(this.timerMusicPlayer_Tick);
             // 
+            // labelChangeLogin
+            // 
+            this.labelChangeLogin.AutoSize = true;
+            this.labelChangeLogin.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelChangeLogin.Location = new System.Drawing.Point(24, 166);
+            this.labelChangeLogin.Name = "labelChangeLogin";
+            this.labelChangeLogin.Size = new System.Drawing.Size(104, 19);
+            this.labelChangeLogin.TabIndex = 8;
+            this.labelChangeLogin.Text = "Смена логина";
+            // 
             // BodyProgram
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -376,6 +386,7 @@
             this.CancelButton = this.ExitButtn;
             this.ClientSize = new System.Drawing.Size(566, 432);
             this.Controls.Add(this.I_LikeIconPlayer);
+            this.Controls.Add(this.btnAddTrack_Moderator);
             this.Controls.Add(this.I_NoLikeIconPlayer);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.Search_TextBox);
@@ -398,7 +409,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.I_LikePictureBox)).EndInit();
             this.UserPage.ResumeLayout(false);
             this.UserPage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.music_poDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.I_NoLikeIconPlayer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.I_LikeIconPlayer)).EndInit();
             this.ResumeLayout(false);
@@ -409,7 +419,6 @@
         #endregion
 
         private System.Windows.Forms.Button ExitButtn;
-        private Music_poDataSet music_poDataSet;
         private System.Windows.Forms.Panel TopPanel;
         private System.Windows.Forms.Label TopLabelMusicApp;
         private AxWMPLib.AxWindowsMediaPlayer axMusic;
@@ -424,7 +433,7 @@
         private System.Windows.Forms.TextBox old_passTextBox;
         private System.Windows.Forms.TextBox name_userTextBox;
         private System.Windows.Forms.Label UserStatus;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelChangePass;
         private System.Windows.Forms.Button btnUpdate_pass;
         private System.Windows.Forms.Button btnUpdate_user;
         private System.Windows.Forms.TextBox Search_TextBox;
@@ -435,5 +444,6 @@
         private System.Windows.Forms.PictureBox I_LikeIconPlayer;
         private System.Windows.Forms.PictureBox I_LikePictureBox;
         private System.Windows.Forms.Timer timerMusicPlayer;
+        private System.Windows.Forms.Label labelChangeLogin;
     }
 }

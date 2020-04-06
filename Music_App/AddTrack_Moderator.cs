@@ -12,7 +12,7 @@ namespace Music_App
 {    
     public partial class AddTrack_Moderator : Form
     {
-        string DestPath = "C:\\Users\\Айнур\\Documents\\GitHub\\Music_App\\Music_App\\bin\\x64\\Debug\\Music\\Alboms\\";
+        string DestPath = "C:\\Users\\Айнур\\Documents\\GitHub\\MusicApp\\Music_App\\bin\\x64\\Debug\\Music\\Alboms\\";
         string pathAlbomPicture;
         string MyConn,MyQuery;
         byte[] imageData;
@@ -119,7 +119,7 @@ namespace Music_App
                 PathToSong = PathToSong + AuthorComboBox.SelectedItem + "\\" + AlbomComboBox.SelectedItem;
                 string TrackPath = System.IO.Path.GetDirectoryName(ofd.FileName);               
                 string FileName = ofd.SafeFileName;
-                ///////////
+                ///////////"C:\\Users\\Айнур\\Documents\\GitHub\\Music_App\\Music_App\\bin\\x64\\Debug\\Music\\Alboms\\
                 try
                 {
                     System.IO.File.Copy(TrackPath + @"\" + FileName, PathToSong + @"\" + FileName);
@@ -289,10 +289,12 @@ namespace Music_App
                 if (AuthorComboBox.Items.Contains(NameAuthorTextBox_AddPerformer.Text))
                 {
                     MessageBox.Show("Такой автор уже есть!\nВведите другого автора или выйдите из этой формы", "Уже существует!");
+                    return;
                 }
                 else
                 {
                     MessageBox.Show("Проверьте вводимые данные!\nВозможно одно из полей осталось незаполненным", "Не все данные заполнены!");
+                    return;
                 }
             }
             MyQuery = $"EXEC [AddPerformer] '{NameAuthorTextBox_AddPerformer.Text}','{Country_TextBox_AddPerformer.Text}'";
