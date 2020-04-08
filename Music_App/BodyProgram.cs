@@ -142,7 +142,7 @@ namespace Music_App
                 $" where [Albom].[id_albom] = [albom_composition].[id_albom] and" +
                 $" [track].[id_track] = [albom_composition].[id_track] and" +
                 $" ([track_name] like '%{Search_TextBox.Text}%' or [Albom].[name_author] like '%{Search_TextBox.Text}%' or" +
-                $" [Albom].[name_albom] like '%{Search_TextBox.Text}%')";
+                $" [Albom].[name_albom] like '%{Search_TextBox.Text}%' or [genre] like '%{Search_TextBox.Text}%')";
           
             if (Search_TextBox.TextLength > 0)
             {
