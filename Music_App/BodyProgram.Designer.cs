@@ -42,6 +42,7 @@
             this.I_LikePictureBox = new System.Windows.Forms.PictureBox();
             this.UserPage = new System.Windows.Forms.TabPage();
             this.lblExitAccount = new System.Windows.Forms.Label();
+            this.labelChangeLogin = new System.Windows.Forms.Label();
             this.labelChangePass = new System.Windows.Forms.Label();
             this.btnUpdate_pass = new System.Windows.Forms.Button();
             this.btnUpdate_user = new System.Windows.Forms.Button();
@@ -57,7 +58,12 @@
             this.I_NoLikeIconPlayer = new System.Windows.Forms.PictureBox();
             this.I_LikeIconPlayer = new System.Windows.Forms.PictureBox();
             this.timerMusicPlayer = new System.Windows.Forms.Timer(this.components);
-            this.labelChangeLogin = new System.Windows.Forms.Label();
+            this.checkBoxFilterSearch = new System.Windows.Forms.CheckBox();
+            this.radioButtonFilterSearchTrack = new System.Windows.Forms.RadioButton();
+            this.radioButtonFilterSearchAlbom = new System.Windows.Forms.RadioButton();
+            this.radioButtonFilterSearchAuthor = new System.Windows.Forms.RadioButton();
+            this.groupBoxFilterSearch = new System.Windows.Forms.GroupBox();
+            this.radioButtonFilterSearchGenre = new System.Windows.Forms.RadioButton();
             name_userLabel = new System.Windows.Forms.Label();
             this.TopPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axMusic)).BeginInit();
@@ -67,6 +73,7 @@
             this.UserPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.I_NoLikeIconPlayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.I_LikeIconPlayer)).BeginInit();
+            this.groupBoxFilterSearch.SuspendLayout();
             this.SuspendLayout();
             // 
             // name_userLabel
@@ -127,7 +134,7 @@
             // 
             // MusicListBox
             // 
-            this.MusicListBox.Font = new System.Drawing.Font("Modern No. 20", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MusicListBox.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MusicListBox.FormattingEnabled = true;
             this.MusicListBox.ItemHeight = 15;
             this.MusicListBox.Location = new System.Drawing.Point(375, 64);
@@ -217,6 +224,16 @@
             this.lblExitAccount.TabIndex = 10;
             this.lblExitAccount.Text = "Выйти";
             this.lblExitAccount.Click += new System.EventHandler(this.lblExitAccount_Click);
+            // 
+            // labelChangeLogin
+            // 
+            this.labelChangeLogin.AutoSize = true;
+            this.labelChangeLogin.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelChangeLogin.Location = new System.Drawing.Point(24, 166);
+            this.labelChangeLogin.Name = "labelChangeLogin";
+            this.labelChangeLogin.Size = new System.Drawing.Size(104, 19);
+            this.labelChangeLogin.TabIndex = 8;
+            this.labelChangeLogin.Text = "Смена логина";
             // 
             // labelChangePass
             // 
@@ -367,15 +384,73 @@
             // 
             this.timerMusicPlayer.Tick += new System.EventHandler(this.timerMusicPlayer_Tick);
             // 
-            // labelChangeLogin
+            // checkBoxFilterSearch
             // 
-            this.labelChangeLogin.AutoSize = true;
-            this.labelChangeLogin.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelChangeLogin.Location = new System.Drawing.Point(24, 166);
-            this.labelChangeLogin.Name = "labelChangeLogin";
-            this.labelChangeLogin.Size = new System.Drawing.Size(104, 19);
-            this.labelChangeLogin.TabIndex = 8;
-            this.labelChangeLogin.Text = "Смена логина";
+            this.checkBoxFilterSearch.AutoSize = true;
+            this.checkBoxFilterSearch.Location = new System.Drawing.Point(376, 39);
+            this.checkBoxFilterSearch.Name = "checkBoxFilterSearch";
+            this.checkBoxFilterSearch.Size = new System.Drawing.Size(71, 17);
+            this.checkBoxFilterSearch.TabIndex = 12;
+            this.checkBoxFilterSearch.Text = "фильтры";
+            this.checkBoxFilterSearch.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonFilterSearchTrack
+            // 
+            this.radioButtonFilterSearchTrack.AutoSize = true;
+            this.radioButtonFilterSearchTrack.Location = new System.Drawing.Point(6, 20);
+            this.radioButtonFilterSearchTrack.Name = "radioButtonFilterSearchTrack";
+            this.radioButtonFilterSearchTrack.Size = new System.Drawing.Size(112, 17);
+            this.radioButtonFilterSearchTrack.TabIndex = 13;
+            this.radioButtonFilterSearchTrack.TabStop = true;
+            this.radioButtonFilterSearchTrack.Text = "Поиск по трекам";
+            this.radioButtonFilterSearchTrack.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonFilterSearchAlbom
+            // 
+            this.radioButtonFilterSearchAlbom.AutoSize = true;
+            this.radioButtonFilterSearchAlbom.Location = new System.Drawing.Point(6, 45);
+            this.radioButtonFilterSearchAlbom.Name = "radioButtonFilterSearchAlbom";
+            this.radioButtonFilterSearchAlbom.Size = new System.Drawing.Size(127, 17);
+            this.radioButtonFilterSearchAlbom.TabIndex = 13;
+            this.radioButtonFilterSearchAlbom.TabStop = true;
+            this.radioButtonFilterSearchAlbom.Text = "Поиск по альбомам";
+            this.radioButtonFilterSearchAlbom.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonFilterSearchAuthor
+            // 
+            this.radioButtonFilterSearchAuthor.AutoSize = true;
+            this.radioButtonFilterSearchAuthor.Location = new System.Drawing.Point(6, 70);
+            this.radioButtonFilterSearchAuthor.Name = "radioButtonFilterSearchAuthor";
+            this.radioButtonFilterSearchAuthor.Size = new System.Drawing.Size(118, 17);
+            this.radioButtonFilterSearchAuthor.TabIndex = 13;
+            this.radioButtonFilterSearchAuthor.TabStop = true;
+            this.radioButtonFilterSearchAuthor.Text = "Поиск по авторам";
+            this.radioButtonFilterSearchAuthor.UseVisualStyleBackColor = true;
+            // 
+            // groupBoxFilterSearch
+            // 
+            this.groupBoxFilterSearch.Controls.Add(this.radioButtonFilterSearchGenre);
+            this.groupBoxFilterSearch.Controls.Add(this.radioButtonFilterSearchAuthor);
+            this.groupBoxFilterSearch.Controls.Add(this.radioButtonFilterSearchTrack);
+            this.groupBoxFilterSearch.Controls.Add(this.radioButtonFilterSearchAlbom);
+            this.groupBoxFilterSearch.Location = new System.Drawing.Point(371, 88);
+            this.groupBoxFilterSearch.Name = "groupBoxFilterSearch";
+            this.groupBoxFilterSearch.Size = new System.Drawing.Size(195, 125);
+            this.groupBoxFilterSearch.TabIndex = 14;
+            this.groupBoxFilterSearch.TabStop = false;
+            this.groupBoxFilterSearch.Text = "Фильтры:";
+            this.groupBoxFilterSearch.Visible = false;
+            // 
+            // radioButtonFilterSearchGenre
+            // 
+            this.radioButtonFilterSearchGenre.AutoSize = true;
+            this.radioButtonFilterSearchGenre.Location = new System.Drawing.Point(6, 93);
+            this.radioButtonFilterSearchGenre.Name = "radioButtonFilterSearchGenre";
+            this.radioButtonFilterSearchGenre.Size = new System.Drawing.Size(115, 17);
+            this.radioButtonFilterSearchGenre.TabIndex = 13;
+            this.radioButtonFilterSearchGenre.TabStop = true;
+            this.radioButtonFilterSearchGenre.Text = "Поиск по жанрам";
+            this.radioButtonFilterSearchGenre.UseVisualStyleBackColor = true;
             // 
             // BodyProgram
             // 
@@ -385,6 +460,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.CancelButton = this.ExitButtn;
             this.ClientSize = new System.Drawing.Size(566, 432);
+            this.Controls.Add(this.checkBoxFilterSearch);
             this.Controls.Add(this.I_LikeIconPlayer);
             this.Controls.Add(this.btnAddTrack_Moderator);
             this.Controls.Add(this.I_NoLikeIconPlayer);
@@ -394,6 +470,7 @@
             this.Controls.Add(this.MusicListBox);
             this.Controls.Add(this.axMusic);
             this.Controls.Add(this.TopPanel);
+            this.Controls.Add(this.groupBoxFilterSearch);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -411,6 +488,8 @@
             this.UserPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.I_NoLikeIconPlayer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.I_LikeIconPlayer)).EndInit();
+            this.groupBoxFilterSearch.ResumeLayout(false);
+            this.groupBoxFilterSearch.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -445,5 +524,11 @@
         private System.Windows.Forms.PictureBox I_LikePictureBox;
         private System.Windows.Forms.Timer timerMusicPlayer;
         private System.Windows.Forms.Label labelChangeLogin;
+        private System.Windows.Forms.CheckBox checkBoxFilterSearch;
+        private System.Windows.Forms.RadioButton radioButtonFilterSearchTrack;
+        private System.Windows.Forms.RadioButton radioButtonFilterSearchAlbom;
+        private System.Windows.Forms.RadioButton radioButtonFilterSearchAuthor;
+        private System.Windows.Forms.GroupBox groupBoxFilterSearch;
+        private System.Windows.Forms.RadioButton radioButtonFilterSearchGenre;
     }
 }

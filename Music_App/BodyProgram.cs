@@ -33,6 +33,8 @@ namespace Music_App
             if (role == "Модератор")
                 btnAddTrack_Moderator.Visible = true;
             this.auth = auth;
+
+            checkBoxFilterSearch.CheckedChanged += new EventHandler(checkBoxFilter_CheckedChanged);
         }
 
         /// Общее
@@ -136,21 +138,71 @@ namespace Music_App
             }
         }
 
+
+        private void checkBoxFilter_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkBoxFilterSearch.Checked)
+            {
+                MusicListBox.Items.Clear();
+                groupBoxFilterSearch.Visible = true;
+            }
+            else
+            {
+                MusicListBox.Items.Clear();
+                groupBoxFilterSearch.Visible = false;
+            }
+        }
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            MyQuery = $"select [Albom].[name_author],[Albom].[name_albom],[track_name] from [Albom],[track],[albom_composition] " +
+            groupBoxFilterSearch.Visible = false;           
+            if(checkBoxFilterSearch.Checked)
+            {                
+                if (radioButtonFilterSearchTrack.Checked)
+                {
+                    MyQuery = $"select [Albom].[name_author],[Albom].[name_albom],[track_name] from [Albom],[track],[albom_composition] " +
+                        $" where [Albom].[id_albom] = [albom_composition].[id_albom] and" +
+                        $" [track].[id_track] = [albom_composition].[id_track] and" +
+                        $" [track_name] like '%{Search_TextBox.Text}%'";
+                }
+                else if (radioButtonFilterSearchAlbom.Checked)
+                {
+                    MyQuery = $"select [Albom].[name_author],[Albom].[name_albom],[track_name] from [Albom],[track],[albom_composition] " +
+                        $" where [Albom].[id_albom] = [albom_composition].[id_albom] and" +
+                        $" [track].[id_track] = [albom_composition].[id_track] and" +
+                        $" [Albom].[name_albom] like '%{Search_TextBox.Text}%'";
+                }
+                else if (radioButtonFilterSearchAuthor.Checked)
+                {                   
+                    MyQuery = $"select [Albom].[name_author],[Albom].[name_albom],[track_name] from [Albom],[track],[albom_composition] " +
+                        $" where [Albom].[id_albom] = [albom_composition].[id_albom] and" +
+                        $" [track].[id_track] = [albom_composition].[id_track] and " +
+                        $"[Albom].[name_author] like '%{Search_TextBox.Text}%'";
+                }
+                else if(radioButtonFilterSearchGenre.Checked)
+                {
+                    MyQuery = $"select [Albom].[name_author],[Albom].[name_albom],[track_name] from [Albom],[track],[albom_composition] " +
+                        $" where [Albom].[id_albom] = [albom_composition].[id_albom] and" +
+                        $" [track].[id_track] = [albom_composition].[id_track] and" +
+                        $" [genre] like '%{Search_TextBox.Text}%'";
+                }
+            }
+            else
+            {                
+                MyQuery = $"select [Albom].[name_author],[Albom].[name_albom],[track_name] from [Albom],[track],[albom_composition] " +
                 $" where [Albom].[id_albom] = [albom_composition].[id_albom] and" +
                 $" [track].[id_track] = [albom_composition].[id_track] and" +
                 $" ([track_name] like '%{Search_TextBox.Text}%' or [Albom].[name_author] like '%{Search_TextBox.Text}%' or" +
                 $" [Albom].[name_albom] like '%{Search_TextBox.Text}%' or [genre] like '%{Search_TextBox.Text}%')";
-          
+            }
             if (Search_TextBox.TextLength > 0)
             {
+                checkBoxFilterSearch.Checked = false;
                 SelectSongs(MyQuery);
                 if(MusicListBox.Items.Count == 0)
                 {
-                    MessageBox.Show("Поиск не дал результатов :(","Поиск");
+                    MessageBox.Show("Поиск не дал результатов :(","Поиск");                   
                 }
+                Search_TextBox.Text = "";               
             }
             else
                 MessageBox.Show("Введите трек, который хотите найти");
@@ -343,7 +395,7 @@ namespace Music_App
             this.Hide();
             auth.Show();
         }
-     
+      
 
         private void btnUpdate_pass_Click(object sender, EventArgs e)
         {
