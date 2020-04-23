@@ -148,7 +148,8 @@ namespace Music_App
             }
            MyQuery = $"EXEC [AddTrack] " +
                 $"'{TrackNameTextBox.Text}'," +
-                $"'{AuthorComboBox.SelectedItem}'," +       
+                $"'{AuthorComboBox.SelectedItem}'," +
+                $"'{AlbomComboBox.SelectedItem}'," +
                 $"'{GenreComboBox.SelectedItem}'";
             StoredProcedureEXEC.ExecuteProcedure(MyQuery, "Трек успешно добавлен!", this);
         }
