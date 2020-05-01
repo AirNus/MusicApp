@@ -359,8 +359,8 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(277, 241);
-            this.Controls.Add(this.GroupBoxRegistration);
             this.Controls.Add(this.GroupBoxAuth);
+            this.Controls.Add(this.GroupBoxRegistration);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;

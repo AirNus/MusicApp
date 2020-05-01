@@ -15,7 +15,7 @@ namespace Music_App
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Auth());
+            Application.Run(new Authorization());
         }
     }
 }
