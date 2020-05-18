@@ -34,10 +34,10 @@
             this.GroupBoxRegistration = new System.Windows.Forms.GroupBox();
             this.btnCancelRegistration = new System.Windows.Forms.Button();
             this.btnAddNewUser = new System.Windows.Forms.Button();
-            this.PasswordOtherAdminTextBox_Registration = new System.Windows.Forms.TextBox();
-            this.RepeatPassTextBox_Registration = new System.Windows.Forms.TextBox();
-            this.PasswordTextBox_Registration = new System.Windows.Forms.TextBox();
-            this.LoginTextBox_Registration = new System.Windows.Forms.TextBox();
+            this.textBoxPasswordOtherAdminRegistration = new System.Windows.Forms.TextBox();
+            this.textBoxRepeatPasswordRegistration = new System.Windows.Forms.TextBox();
+            this.textBoxPasswordRegistration = new System.Windows.Forms.TextBox();
+            this.textBoxLoginRegistration = new System.Windows.Forms.TextBox();
             this.NewAdmin_CheckBox = new System.Windows.Forms.CheckBox();
             this.lblRepeatPassword_NewUser = new System.Windows.Forms.Label();
             this.lblPasswordOtherAdmin_NewUser = new System.Windows.Forms.Label();
@@ -45,12 +45,12 @@
             this.lblPassword_NewUser = new System.Windows.Forms.Label();
             this.lblNick_NewUser = new System.Windows.Forms.Label();
             this.GroupBoxAuth = new System.Windows.Forms.GroupBox();
-            this.textBoxPassword = new System.Windows.Forms.TextBox();
+            this.btnEnterProgram = new System.Windows.Forms.Button();
             this.lblNewUserRegistration = new System.Windows.Forms.Label();
+            this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.lblQuestionNewUser = new System.Windows.Forms.Label();
             this.WelcomeLabelAuth = new System.Windows.Forms.Label();
             this.label_timer_expl = new System.Windows.Forms.Label();
-            this.btnEnterProgram = new System.Windows.Forms.Button();
             this.label_timer = new System.Windows.Forms.Label();
             this.textBoxLogin = new System.Windows.Forms.TextBox();
             this.timer = new System.Windows.Forms.Timer(this.components);
@@ -60,14 +60,36 @@
             this.GroupBoxAuth.SuspendLayout();
             this.SuspendLayout();
             // 
+            // labelLogin
+            // 
+            labelLogin.AutoSize = true;
+            labelLogin.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            labelLogin.ForeColor = System.Drawing.Color.WhiteSmoke;
+            labelLogin.Location = new System.Drawing.Point(153, 116);
+            labelLogin.Name = "labelLogin";
+            labelLogin.Size = new System.Drawing.Size(61, 21);
+            labelLogin.TabIndex = 1;
+            labelLogin.Text = "Логин";
+            // 
+            // labelPassword
+            // 
+            labelPassword.AutoSize = true;
+            labelPassword.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            labelPassword.ForeColor = System.Drawing.Color.WhiteSmoke;
+            labelPassword.Location = new System.Drawing.Point(153, 176);
+            labelPassword.Name = "labelPassword";
+            labelPassword.Size = new System.Drawing.Size(69, 21);
+            labelPassword.TabIndex = 7;
+            labelPassword.Text = "Пароль";
+            // 
             // GroupBoxRegistration
             // 
             this.GroupBoxRegistration.Controls.Add(this.btnCancelRegistration);
             this.GroupBoxRegistration.Controls.Add(this.btnAddNewUser);
-            this.GroupBoxRegistration.Controls.Add(this.PasswordOtherAdminTextBox_Registration);
-            this.GroupBoxRegistration.Controls.Add(this.RepeatPassTextBox_Registration);
-            this.GroupBoxRegistration.Controls.Add(this.PasswordTextBox_Registration);
-            this.GroupBoxRegistration.Controls.Add(this.LoginTextBox_Registration);
+            this.GroupBoxRegistration.Controls.Add(this.textBoxPasswordOtherAdminRegistration);
+            this.GroupBoxRegistration.Controls.Add(this.textBoxRepeatPasswordRegistration);
+            this.GroupBoxRegistration.Controls.Add(this.textBoxPasswordRegistration);
+            this.GroupBoxRegistration.Controls.Add(this.textBoxLoginRegistration);
             this.GroupBoxRegistration.Controls.Add(this.NewAdmin_CheckBox);
             this.GroupBoxRegistration.Controls.Add(this.lblRepeatPassword_NewUser);
             this.GroupBoxRegistration.Controls.Add(this.lblPasswordOtherAdmin_NewUser);
@@ -89,9 +111,10 @@
             this.btnCancelRegistration.Location = new System.Drawing.Point(26, 298);
             this.btnCancelRegistration.Name = "btnCancelRegistration";
             this.btnCancelRegistration.Size = new System.Drawing.Size(107, 37);
-            this.btnCancelRegistration.TabIndex = 23;
+            this.btnCancelRegistration.TabIndex = 13;
             this.btnCancelRegistration.Text = "Отмена";
             this.btnCancelRegistration.UseVisualStyleBackColor = true;
+            this.btnCancelRegistration.Click += new System.EventHandler(this.btnCancelRegistration_Click);
             // 
             // btnAddNewUser
             // 
@@ -101,43 +124,46 @@
             this.btnAddNewUser.Location = new System.Drawing.Point(239, 298);
             this.btnAddNewUser.Name = "btnAddNewUser";
             this.btnAddNewUser.Size = new System.Drawing.Size(107, 37);
-            this.btnAddNewUser.TabIndex = 23;
+            this.btnAddNewUser.TabIndex = 14;
             this.btnAddNewUser.Text = "Готово!";
             this.btnAddNewUser.UseVisualStyleBackColor = true;
+            this.btnAddNewUser.Click += new System.EventHandler(this.btnAddNewUser_Click);
             // 
-            // PasswordOtherAdminTextBox_Registration
+            // textBoxPasswordOtherAdminRegistration
             // 
-            this.PasswordOtherAdminTextBox_Registration.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PasswordOtherAdminTextBox_Registration.Location = new System.Drawing.Point(246, 256);
-            this.PasswordOtherAdminTextBox_Registration.Name = "PasswordOtherAdminTextBox_Registration";
-            this.PasswordOtherAdminTextBox_Registration.Size = new System.Drawing.Size(130, 22);
-            this.PasswordOtherAdminTextBox_Registration.TabIndex = 4;
-            this.PasswordOtherAdminTextBox_Registration.TabStop = false;
-            this.PasswordOtherAdminTextBox_Registration.Visible = false;
+            this.textBoxPasswordOtherAdminRegistration.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxPasswordOtherAdminRegistration.Location = new System.Drawing.Point(246, 256);
+            this.textBoxPasswordOtherAdminRegistration.Name = "textBoxPasswordOtherAdminRegistration";
+            this.textBoxPasswordOtherAdminRegistration.Size = new System.Drawing.Size(130, 22);
+            this.textBoxPasswordOtherAdminRegistration.TabIndex = 4;
+            this.textBoxPasswordOtherAdminRegistration.TabStop = false;
+            this.textBoxPasswordOtherAdminRegistration.Visible = false;
             // 
-            // RepeatPassTextBox_Registration
+            // textBoxRepeatPasswordRegistration
             // 
-            this.RepeatPassTextBox_Registration.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.RepeatPassTextBox_Registration.Location = new System.Drawing.Point(177, 177);
-            this.RepeatPassTextBox_Registration.Name = "RepeatPassTextBox_Registration";
-            this.RepeatPassTextBox_Registration.Size = new System.Drawing.Size(130, 22);
-            this.RepeatPassTextBox_Registration.TabIndex = 22;
+            this.textBoxRepeatPasswordRegistration.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxRepeatPasswordRegistration.Location = new System.Drawing.Point(177, 177);
+            this.textBoxRepeatPasswordRegistration.Name = "textBoxRepeatPasswordRegistration";
+            this.textBoxRepeatPasswordRegistration.PasswordChar = '☺';
+            this.textBoxRepeatPasswordRegistration.Size = new System.Drawing.Size(130, 22);
+            this.textBoxRepeatPasswordRegistration.TabIndex = 12;
             // 
-            // PasswordTextBox_Registration
+            // textBoxPasswordRegistration
             // 
-            this.PasswordTextBox_Registration.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PasswordTextBox_Registration.Location = new System.Drawing.Point(177, 136);
-            this.PasswordTextBox_Registration.Name = "PasswordTextBox_Registration";
-            this.PasswordTextBox_Registration.Size = new System.Drawing.Size(130, 22);
-            this.PasswordTextBox_Registration.TabIndex = 21;
+            this.textBoxPasswordRegistration.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxPasswordRegistration.Location = new System.Drawing.Point(177, 136);
+            this.textBoxPasswordRegistration.Name = "textBoxPasswordRegistration";
+            this.textBoxPasswordRegistration.PasswordChar = '☺';
+            this.textBoxPasswordRegistration.Size = new System.Drawing.Size(130, 22);
+            this.textBoxPasswordRegistration.TabIndex = 11;
             // 
-            // LoginTextBox_Registration
+            // textBoxLoginRegistration
             // 
-            this.LoginTextBox_Registration.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LoginTextBox_Registration.Location = new System.Drawing.Point(177, 91);
-            this.LoginTextBox_Registration.Name = "LoginTextBox_Registration";
-            this.LoginTextBox_Registration.Size = new System.Drawing.Size(130, 22);
-            this.LoginTextBox_Registration.TabIndex = 20;
+            this.textBoxLoginRegistration.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxLoginRegistration.Location = new System.Drawing.Point(177, 91);
+            this.textBoxLoginRegistration.Name = "textBoxLoginRegistration";
+            this.textBoxLoginRegistration.Size = new System.Drawing.Size(130, 22);
+            this.textBoxLoginRegistration.TabIndex = 10;
             // 
             // NewAdmin_CheckBox
             // 
@@ -151,6 +177,7 @@
             this.NewAdmin_CheckBox.TabStop = false;
             this.NewAdmin_CheckBox.Text = "Я новый модератор";
             this.NewAdmin_CheckBox.UseVisualStyleBackColor = true;
+            this.NewAdmin_CheckBox.CheckedChanged += new System.EventHandler(this.NewAdmin_checkBox_CheckedChange);
             // 
             // lblRepeatPassword_NewUser
             // 
@@ -211,8 +238,8 @@
             // GroupBoxAuth
             // 
             this.GroupBoxAuth.Controls.Add(this.btnEnterProgram);
-            this.GroupBoxAuth.Controls.Add(this.textBoxPassword);
             this.GroupBoxAuth.Controls.Add(this.lblNewUserRegistration);
+            this.GroupBoxAuth.Controls.Add(this.textBoxPassword);
             this.GroupBoxAuth.Controls.Add(this.lblQuestionNewUser);
             this.GroupBoxAuth.Controls.Add(this.WelcomeLabelAuth);
             this.GroupBoxAuth.Controls.Add(this.label_timer_expl);
@@ -226,14 +253,18 @@
             this.GroupBoxAuth.TabIndex = 24;
             this.GroupBoxAuth.TabStop = false;
             // 
-            // textBoxPassword
+            // btnEnterProgram
             // 
-            this.textBoxPassword.BackColor = System.Drawing.Color.White;
-            this.textBoxPassword.ForeColor = System.Drawing.Color.Black;
-            this.textBoxPassword.Location = new System.Drawing.Point(59, 200);
-            this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(264, 25);
-            this.textBoxPassword.TabIndex = 1;
+            this.btnEnterProgram.BackColor = System.Drawing.Color.White;
+            this.btnEnterProgram.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnEnterProgram.ForeColor = System.Drawing.Color.Black;
+            this.btnEnterProgram.Location = new System.Drawing.Point(123, 298);
+            this.btnEnterProgram.Name = "btnEnterProgram";
+            this.btnEnterProgram.Size = new System.Drawing.Size(128, 37);
+            this.btnEnterProgram.TabIndex = 2;
+            this.btnEnterProgram.Text = "Вход";
+            this.btnEnterProgram.UseVisualStyleBackColor = false;
+            this.btnEnterProgram.Click += new System.EventHandler(this.btnEnterProgram_Click);
             // 
             // lblNewUserRegistration
             // 
@@ -246,17 +277,18 @@
             this.lblNewUserRegistration.Size = new System.Drawing.Size(142, 19);
             this.lblNewUserRegistration.TabIndex = 11;
             this.lblNewUserRegistration.Text = "Зарегистрируйтесь!";
+            this.lblNewUserRegistration.Click += new System.EventHandler(this.lblNewUserRegistration_Click);
             // 
-            // labelLogin
+            // textBoxPassword
             // 
-            labelLogin.AutoSize = true;
-            labelLogin.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            labelLogin.ForeColor = System.Drawing.Color.WhiteSmoke;
-            labelLogin.Location = new System.Drawing.Point(153, 116);
-            labelLogin.Name = "labelLogin";
-            labelLogin.Size = new System.Drawing.Size(61, 21);
-            labelLogin.TabIndex = 1;
-            labelLogin.Text = "Логин";
+            this.textBoxPassword.BackColor = System.Drawing.Color.White;
+            this.textBoxPassword.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxPassword.ForeColor = System.Drawing.Color.Black;
+            this.textBoxPassword.Location = new System.Drawing.Point(59, 200);
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.PasswordChar = '○';
+            this.textBoxPassword.Size = new System.Drawing.Size(264, 29);
+            this.textBoxPassword.TabIndex = 1;
             // 
             // lblQuestionNewUser
             // 
@@ -296,19 +328,6 @@
             this.label_timer_expl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label_timer_expl.Visible = false;
             // 
-            // btnEnterProgram
-            // 
-            this.btnEnterProgram.BackColor = System.Drawing.Color.White;
-            this.btnEnterProgram.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnEnterProgram.ForeColor = System.Drawing.Color.Black;
-            this.btnEnterProgram.Location = new System.Drawing.Point(130, 298);
-            this.btnEnterProgram.Name = "btnEnterProgram";
-            this.btnEnterProgram.Size = new System.Drawing.Size(128, 37);
-            this.btnEnterProgram.TabIndex = 2;
-            this.btnEnterProgram.Text = "Вход";
-            this.btnEnterProgram.UseVisualStyleBackColor = false;
-            this.btnEnterProgram.Click += new System.EventHandler(this.btnEnterProgram_Click);
-            // 
             // label_timer
             // 
             this.label_timer.AutoSize = true;
@@ -319,30 +338,20 @@
             this.label_timer.Name = "label_timer";
             this.label_timer.Size = new System.Drawing.Size(19, 13);
             this.label_timer.TabIndex = 8;
-            this.label_timer.Text = "30";
+            this.label_timer.Text = "10";
             this.label_timer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label_timer.Visible = false;
             // 
             // textBoxLogin
             // 
             this.textBoxLogin.BackColor = System.Drawing.Color.White;
+            this.textBoxLogin.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxLogin.ForeColor = System.Drawing.Color.Black;
             this.textBoxLogin.Location = new System.Drawing.Point(59, 142);
             this.textBoxLogin.MaxLength = 30;
             this.textBoxLogin.Name = "textBoxLogin";
-            this.textBoxLogin.Size = new System.Drawing.Size(264, 25);
+            this.textBoxLogin.Size = new System.Drawing.Size(264, 29);
             this.textBoxLogin.TabIndex = 0;
-            // 
-            // labelPassword
-            // 
-            labelPassword.AutoSize = true;
-            labelPassword.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            labelPassword.ForeColor = System.Drawing.Color.WhiteSmoke;
-            labelPassword.Location = new System.Drawing.Point(153, 176);
-            labelPassword.Name = "labelPassword";
-            labelPassword.Size = new System.Drawing.Size(69, 21);
-            labelPassword.TabIndex = 7;
-            labelPassword.Text = "Пароль";
             // 
             // timer
             // 
@@ -351,14 +360,16 @@
             // 
             // Authorization
             // 
+            this.AcceptButton = this.btnEnterProgram;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DimGray;
+            this.AutoSize = true;
+            this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(405, 384);
             this.Controls.Add(this.GroupBoxAuth);
             this.Controls.Add(this.GroupBoxRegistration);
             this.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Authorization";
@@ -377,10 +388,10 @@
         private System.Windows.Forms.GroupBox GroupBoxRegistration;
         private System.Windows.Forms.Button btnCancelRegistration;
         private System.Windows.Forms.Button btnAddNewUser;
-        private System.Windows.Forms.TextBox PasswordOtherAdminTextBox_Registration;
-        private System.Windows.Forms.TextBox RepeatPassTextBox_Registration;
-        private System.Windows.Forms.TextBox PasswordTextBox_Registration;
-        private System.Windows.Forms.TextBox LoginTextBox_Registration;
+        private System.Windows.Forms.TextBox textBoxPasswordOtherAdminRegistration;
+        private System.Windows.Forms.TextBox textBoxRepeatPasswordRegistration;
+        private System.Windows.Forms.TextBox textBoxPasswordRegistration;
+        private System.Windows.Forms.TextBox textBoxLoginRegistration;
         private System.Windows.Forms.CheckBox NewAdmin_CheckBox;
         private System.Windows.Forms.Label lblRepeatPassword_NewUser;
         private System.Windows.Forms.Label lblPasswordOtherAdmin_NewUser;

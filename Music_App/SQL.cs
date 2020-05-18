@@ -10,7 +10,7 @@ namespace Music_AppML
     {
         static private string connectionString = @"Data Source = (local)\SQLEXPRESS; Initial Catalog = Music_po; Integrated Security = True";
 
-        static SqlCommand StoredProcedure(SqlCommand command)
+        static internal SqlCommand StoredProcedure(SqlCommand command)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -29,8 +29,9 @@ namespace Music_AppML
             }
                 return command;
         }
-        static internal SqlDataReader Query(SqlCommand command)
+        static internal List<string> Query(SqlCommand command)
         {
+            List<string> rezult = new List<string>();
             SqlDataReader reader;
             using (SqlConnection conn = new SqlConnection(connectionString))
             {                
@@ -44,10 +45,16 @@ namespace Music_AppML
                 {
                     return null;
                 }
-                
+                if(reader.HasRows)
+                { 
+                while(reader.Read())
+                {
+                    rezult.Add(reader[0].ToString());
+                }
+                }
                 conn.Close();
             }
-           return reader;
+           return rezult;
             
         }
     }
